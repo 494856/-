@@ -1,12 +1,3 @@
-'''
-================SAIFALISEW1508=====================
-Telegram members adding script
-Coded by a kid- github.com/saifalisew1508
-Apologies if anything in the code is dumb :)
-Copy with credits
-************************************************
-'''
-
 # import libraries
 from telethon.sync import TelegramClient
 from telethon.tl.types import InputPeerChannel
