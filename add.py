@@ -1,3 +1,12 @@
+'''
+================SAIFALISEW1508=====================
+Telegram members adding script
+Coded by a kid- github.com/saifalisew1508
+Apologies if anything in the code is dumb :)
+Copy with credits
+************************************************
+'''
+
 # import libraries
 from telethon.sync import TelegramClient
 from telethon.tl.types import InputPeerChannel
@@ -131,16 +140,16 @@ while True:
     except EOFError:
         break
 
-print(f'{info}{lg} Total accounts: {w}{len(accounts)}')
-number_of_accs = int(input(f'{INPUT}{cy} Enter number of accounts to use: {r}'))
-print(f'{info}{cy} Choose an option{lg}')
-print(f'{cy}[0]{lg} Add to public group')
-print(f'{cy}[1]{lg} Add to private group')
-choice = int(input(f'{INPUT}{cy} Enter choice: {r}'))
+print(f'{info}{lg} 账户总数： {w}{len(accounts)}')
+number_of_accs = int(input(f'{INPUT}{cy} 输入要使用的帐户数: {r}'))
+print(f'{info}{cy} 选择一个选项{lg}')
+print(f'{cy}[0]{lg} 添加到公共组')
+print(f'{cy}[1]{lg} 添加到私人群组')
+choice = int(input(f'{INPUT}{cy} 输入选择: {r}'))
 if choice == 0:
-    target = str(input(f'{INPUT}{cy} Enter public group link: {r}'))
+    target = str(input(f'{INPUT}{cy} 输入公共组链接: {r}'))
 else:
-    target = str(input(f'{INPUT}{cy} Enter private group link: {r}'))
+    target = str(input(f'{INPUT}{cy} 输入私人群组链接: {r}'))
 print(f'{grey}_'*50)
 #status_choice = str(input(f'{INPUT}{cy} Do you wanna add active members?[y/n]: {r}'))
 to_use = [x for x in accounts[:number_of_accs]]
@@ -151,7 +160,7 @@ with open('vars.txt', 'wb') as f:
     for ab in to_use:
         pickle.dump(ab, f)
     f.close()
-sleep_time = int(input(f'{INPUT}{cy} Enter delay time per request{w}[{lg}0 for None{w}]: {r}'))
+sleep_time = int(input(f'{INPUT}{cy} 输入每个请求的延迟时间{w}[{lg}0 for None{w}]: {r}'))
 #print(f'{info}{lg} Joining group from {w}{number_of_accs} accounts...')
 #print(f'{grey}-'*50)
 print(f'{success}{lg} -- Adding members from {w}{len(to_use)}{lg} account(s) --')

@@ -47,25 +47,25 @@ while True:
     print(lg+'[3] 删除特定账号'+n)
     print(lg+'[5] 显示所有账户'+n)
     print(lg+'[6] 退出'+n)
-    a = int(input('\nEnter your choice: '))
+    a = int(input('\n输入您的选择： '))
     if a == 1:
         new_accs = []
         with open('vars.txt', 'ab') as g:
-            number_to_add = int(input(f'\n{lg} [~] Enter number of accounts to add: {r}'))
+            number_to_add = int(input(f'\n{lg} [~] 输入要添加的帐户数量: {r}'))
             for i in range(number_to_add):
-                phone_number = str(input(f'\n{lg} [~] Enter Phone Number: {r}'))
+                phone_number = str(input(f'\n{lg} [~] 输入电话号码: {r}'))
                 parsed_number = ''.join(phone_number.split())
                 pickle.dump([parsed_number], g)
                 new_accs.append(parsed_number)
             print(f'\n{lg} [i] Saved all accounts in vars.txt')
             clr()
-            print(f'\n{lg} [*] Logging in from new accounts\n')
+            print(f'\n{lg} [*] 从新帐户登录\n')
             for number in new_accs:
                 c = TelegramClient(f'sessions/{number}', 3910389 , '86f861352f0ab76a251866059a6adbd6')
                 c.start(number)
                 print(f'{lg}[+] Login successful')
                 c.disconnect()
-            input(f'\n Press enter to goto main menu...')
+            input(f'\n 按回车键进入主菜单...')
 
         g.close()
     elif a == 2:
@@ -79,7 +79,7 @@ while True:
                 break
         h.close()
         if len(accounts) == 0:
-            print(r+'[!] There are no accounts! Please add some and retry')
+            print(r+'[!] 没有账户！ 请添加一些并重试')
             sleep(3)
         else:
             for account in accounts:
@@ -96,7 +96,7 @@ while True:
                         banned_accs.append(account)
             if len(banned_accs) == 0:
                 print(lg+'Congrats! No banned accounts')
-                input('\nPress enter to goto main menu...')
+                input('\n按回车键进入主菜单...')
             else:
                 for m in banned_accs:
                     accounts.remove(m)
@@ -106,7 +106,7 @@ while True:
                         pickle.dump([Phone], k)
                 k.close()
                 print(lg+'[i] All banned accounts removed'+n)
-                input('\nPress enter to goto main menu...')
+                input('\n按回车键进入主菜单...')
 
     elif a == 3:
         accs = []
@@ -118,11 +118,11 @@ while True:
                 break
         f.close()
         i = 0
-        print(f'{lg}[i] Choose an account to delete\n')
+        print(f'{lg}[i] 选择要删除的帐户\n')
         for acc in accs:
             print(f'{lg}[{i}] {acc[0]}{n}')
             i += 1
-        index = int(input(f'\n{lg}[+] Enter a choice: {n}'))
+        index = int(input(f'\n{lg}[+] 输入一个选项: {n}'))
         phone = str(accs[index][0])
         session_file = phone + '.session'
         if os.name == 'nt':
@@ -133,8 +133,8 @@ while True:
         f = open('vars.txt', 'wb')
         for account in accs:
             pickle.dump(account, f)
-        print(f'\n{lg}[+] Account Deleted{n}')
-        input(f'\nPress enter to goto main menu...')
+        print(f'\n{lg}[+] 帐户已删除{n}')
+        input(f'\n按回车键进入主菜单...')
         f.close()
     elif a == 4:
         # thanks to github.com/th3unkn0n for the snippet below
@@ -164,10 +164,10 @@ while True:
                 exit()
             else:
                 print(f'{lg}[!] Update aborted.')
-                input('Press enter to goto main menu...')
+                input('按回车键进入主菜单...')
         else:
             print(f'{lg}[i] Your Telegram-Members-Adder is already up to date')
-            input('Press enter to goto main menu...')
+            input('按回车键进入主菜单...')
     elif a == 5:
         accs = []
         f = open('vars.txt', 'rb')
@@ -178,14 +178,14 @@ while True:
                 break
         f.close()
         print(f'\n{cy}')
-        print(f'\tList Of Phone Numbers Are')
+        print(f'\t电话号码列表是')
         print(f'==========================================================')
         i = 0
         for z in accs:
             print(f'\t{z[0]}')
             i += 1
         print(f'==========================================================')
-        input('\nPress enter to goto main menu')
+        input('\n按回车键进入主菜单')
     elif a == 6:
         clr()
         banner()
