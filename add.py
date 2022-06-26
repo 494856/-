@@ -53,7 +53,7 @@ def banner():
     for char in b:
         print(f'{random.choice(colors)}{char}{rs}')
     #print('=============SAIFALISEW1508==============')
-    print(f'{lg}Version: {w}2.0:latest{lg} | Author: {w}saifalisew1508{rs}')
+    print(f'{lg}Version: {w}2.0{lg} | Author: {w}@HackerAttack_BOT{rs}')
 
 
 # function to clear screen
@@ -126,10 +126,10 @@ try:
                 os.system('del status.dat')
             else: 
                 os.system('rm status.dat')
-            scraped_grp = input(f'{INPUT}{cy} Public/Private group link to scrape members: {r}')
+            scraped_grp = input(f'{INPUT}{cy} 用于抓取成员的公共/私人群组链接: {r}')
             index = 0
 except:
-    scraped_grp = input(f'{INPUT}{cy} Public/Private group link to scrape members: {r}')
+    scraped_grp = input(f'{INPUT}{cy} 用于抓取成员的公共/私人群组链接: {r}')
     index = 0
 # load all the accounts(phonenumbers)
 accounts = []

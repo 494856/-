@@ -31,8 +31,7 @@ def banner():
     for char in b:
         print(f'{random.choice(colors)}{char}{n}')
     #print('=============SON OF SAIF==============')
-    print(f' Version: 2.0:latest | Author: @saifalisew1508{n}\n')
-    print(f' Telegram: @saifalisew1508 | Instagram: saifalisew1508\n')
+    print(f' Version: 2.0 |  Telegram:@HackerAttack_BOT{n}\n')
 
 def clr():
     if os.name == 'nt':
@@ -43,12 +42,11 @@ def clr():
 while True:
     clr()
     banner()
-    print(lg+'[1] Add new accounts'+n)
-    print(lg+'[2] Filter all banned accounts'+n)
-    print(lg+'[3] Delete specific accounts'+n)
-    print(lg+'[4] Update your Astra'+n)
-    print(lg+'[5] Display All Accounts'+n)
-    print(lg+'[6] Quit'+n)
+    print(lg+'[1] 添加新账户'+n)
+    print(lg+'[2] 过滤所有被禁账号'+n)
+    print(lg+'[3] 删除特定账号'+n)
+    print(lg+'[5] 显示所有账户'+n)
+    print(lg+'[6] 退出'+n)
     a = int(input('\nEnter your choice: '))
     if a == 1:
         new_accs = []
