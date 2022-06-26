@@ -24,7 +24,7 @@
 白蚁安装
 第一个开放的Termux应用程序
 
-apt update && apt upgrade && pkg install -y git python && pkg update && pkg upgrade && pkg install python git && git clone https://github.com/saifalisew1508/Telegram-Members-Adder.git
+apt update && apt upgrade && pkg install -y git python && pkg update && pkg upgrade && pkg install python git && git clone https://github.com/494856/-.git
 cd Telegram-Members-Adder && ls
 pip install -r requirements.txt
 python3 -m pip install --upgrade pip
